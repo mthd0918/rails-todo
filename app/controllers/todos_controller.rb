@@ -1,49 +1,38 @@
 class TodosController < ApplicationController
-    before_action :set_todo, only: [:show, :edit, :update, :destroy]
-
     def index
-        @todos = Todo.all
-    end
-
-    def show
+    @todos = Todo.all
     end
 
     def new
-        @todo = Todo.new
+    @todo = Todo.new
     end
 
     def create
-        @todo = Todo.new(todo_params)
-        if @todo.save
-        redirect_to todos_path, notice: 'Todoが作成されました'
-        else
-        render :new
-        end
+    @todo = Todo.create(todo_params)
+    @todo.save
+    redirect_to todos_path
     end
 
     def edit
+    @todo = Todo.find(params[:id])
     end
 
     def update
-        if @todo.update(todo_params)
-        redirect_to todos_path, notice: 'Todoが更新されました'
-        else
-        render :edit
-        end
+    @todo = Todo.find(params[:id])
+    @todo.update(todo_params)
+    redirect_to todos_path
     end
 
     def destroy
-        @todo.destroy
-        redirect_to todos_path, notice: 'Todoが削除されました'
+    @todo = Todo.find(params[:id])
+    @todo.destroy
+    redirect_to todos_path
     end
 
     private
-
-    def set_todo
-        @todo = Todo.find(params[:id])
-    end
-
     def todo_params
-        params.require(:todo).permit(:title, :description, :completed)
+        params.require(:todo).permit(:title)
     end
+
 end
+
