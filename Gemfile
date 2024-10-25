@@ -55,5 +55,7 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
 end
+
+gem "solargraph", group: [ :development, :test ]
 gem "rubocop", require: false
 gem "rubocop-rails", require: false
