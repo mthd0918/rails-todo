@@ -1,25 +1,21 @@
-<div>
-<h1>Todo List</h1>
+<div class="container">
+<h2 class="my-4">Todo List</h2>
 
-<%= link_to "タスクを追加する", new_todo_path %>
+<%= link_to "タスクを追加する", new_todo_path, class: "btn btn-primary mb-4" %>
 
-<table>
-    <thead>
-    <tr>
-        <th>タスク</th>
-    </tr>
-    </thead>
-    <tbody>
+<div class="row">
     <% @todos.each do |todo| %>
-        <tr>
-        <td><%= todo.title %></td>
-        <td>
+    <div class="col-md-4 mb-4">
+        <div class="card">
+        <div class="card-body">
+            <h5 class="card-title"><%= todo.title %></h5>
+            <div class="d-flex justify-content-between mt-3">
             <%= link_to "編集", edit_todo_path(todo), class: "btn btn-primary" %>
-            <%= link_to "削除", todo_path(todo), data: { turbo_method: :delete } %>
-        </td>
-        </tr>
+            <%= link_to "削除", todo_path(todo), data: { turbo_method: :delete }, class: "btn btn-danger" %>
+            </div>
+        </div>
+        </div>
+    </div>
     <% end %>
-    </tbody>
-</table>
 </div>
-
+</div>
