@@ -14,7 +14,7 @@
         <tr>
         <td><%= todo.title %></td>
         <td>
-            <%= link_to "編集", edit_todo_path(todo) %>
+            <%= link_to "編集", edit_todo_path(todo), class: "btn btn-primary" %>
             <%= link_to "削除", todo_path(todo), data: { turbo_method: :delete } %>
         </td>
         </tr>
