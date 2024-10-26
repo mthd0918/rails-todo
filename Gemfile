@@ -60,7 +60,7 @@ gem "solargraph", group: [ :development, :test ]
 gem "rubocop", require: false
 gem "rubocop-rails", require: false
 
-gem 'bootstrap', '~> 5.3.0'
-gem 'jquery-rails'
+gem "bootstrap", "~> 5.3.0"
+gem "jquery-rails"
 
-gem "sassc-rails" 
+gem "sassc-rails"
