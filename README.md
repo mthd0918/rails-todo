@@ -2,7 +2,7 @@
 Rails学習用のtodoアプリ
 
 ## URL
-https://github.com/mthd0918/rails-todo
+https://rails-todo.my-space.website/
 
 ## バージョン
 Ruby: 3.3.0<br>
